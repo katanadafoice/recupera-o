@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEDIDO ACEITO</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Efood 🛒</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="dropbtn">Sobre</a>
+                    <div class="dropdown-content">
+                        <a href="#team">Equipe</a>
+                        <a href="#company">Empresa</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="loby"><button id="clickCounterBtn">Clique aqui</button>
+    <p id="counter">Cliques: 0</p></div>
+
+    <script>
+        let count = 0;
+
+        document.getElementById('clickCounterBtn').addEventListener('click', function () {
+            count++;
+            document.getElementById('counter').textContent = "Cliques: " + count;
+        });
+    </script>
+
+
+    <div class="aceito-co">
+        <h2> SEU PEDIDO ESTA A CAMINHO 😋</h2>
+        <br>
+        <h2> Enquanto isso se distraia</h2>
+    </div>
+
+    <style>
+        #square {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="square"></div>
+
+        <script>
+            const square = document.getElementById('square');
+            let topPosition = 50;
+            let leftPosition = 50;
+
+            document.addEventListener('keydown', function (event) {
+                const step = 10; // Quantos pixels o quadrado se moverá a cada tecla pressionada
+                switch (event.key) {
+                    case 'ArrowUp':
+                        topPosition -= step;
+                        break;
+                    case 'ArrowDown':
+                        topPosition += step;
+                        break;
+                    case 'ArrowLeft':
+                        leftPosition -= step;
+                        break;
+                    case 'ArrowRight':
+                        leftPosition += step;
+                        break;
+                }
+                square.style.top = topPosition + 'px';
+                square.style.left = leftPosition + 'px';
+            });
+        </script>
+
+    </body>
+    <script src="script.js"></script>
+
+</html>
